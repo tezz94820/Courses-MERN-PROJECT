@@ -1,0 +1,19 @@
+.register-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: red;
+    margin: 1em;
+    margin:1em
+}
+
+form{
+    border:2px solid black
+}
+
+input{
+    width: 10em;
+}
