@@ -4,7 +4,7 @@ const authenticateAdmin = (req,res,next) => {
         return next()
     }
     else{
-        throw new Error('you must be admin')
+        throw new Error('you must be a admin')
     }
 }
 

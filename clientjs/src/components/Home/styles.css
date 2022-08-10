@@ -28,7 +28,7 @@
 
 
 
-button{
+.btn{
     position: relative;
     z-index: 10;
     width: 200px;
@@ -44,7 +44,7 @@ button{
     cursor: pointer;
     margin:1.5em 1.5em;
 }
-button::before{
+.btn::before{
     position: absolute;
     top: 15px;
     left: 50px;
@@ -57,6 +57,6 @@ button::before{
     content: "";
     transition: 0.5s;
 }
-button:hover::before{
+.btn:hover::before{
     transform: scale(2);
 }

@@ -7,8 +7,8 @@ function Home() {
   return (
     <div className="home-container">
       <div className='section' id='left-section'>
-        <button onClick={() => navigate('/register')}>Register</button>
-        <button onClick={() => navigate('/signin')}>Sign In</button>
+        <button className='btn' onClick={() => navigate('/register')}>Register</button>
+        <button className='btn' onClick={() => navigate('/signin')}>Sign In</button>
       </div>
       <div className='section' id='right-section'>
         <h1>Welcome to the Courses MarketPlace</h1>

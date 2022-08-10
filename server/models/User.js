@@ -38,7 +38,7 @@ const UserSchema = new mongoose.Schema({
     } ,
     courses_enrolled:[
         {
-            course:String ,
+            course:{type:String,unique:true} ,
             enrollDate:Date
         }
     ]

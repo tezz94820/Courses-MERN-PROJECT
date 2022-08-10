@@ -6,7 +6,7 @@ const register = async (req,res) => {
     try {
         const user = await User.create({...req.body})
         const token = await user.createJWT()
-        res.status(201).json({name:user.name,token})
+        res.status(201).json({name:user.name,token,role:user.role,userId:user._id})
     } catch (error) {
         res.status(500).json({error})
     }

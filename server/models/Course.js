@@ -16,9 +16,7 @@ const CourseSchema = mongoose.Schema({
         type:Date,
         required:[true,'please provide end date']
     } 
-    // status:{
-    //     enum
-    // }
+    
 } , {timestamps:true , toJSON:{virtuals:true}})
 
 

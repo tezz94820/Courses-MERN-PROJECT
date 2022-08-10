@@ -29,18 +29,23 @@ const updateCourse = async (req,res) => {
 }
 
 const deleteCourse = async (req,res) => {
-    const course = await Course.findByIdAndRemove({_id:req.params.id})
-    if (!course) {
-        throw new Error('Course not found')
-    }   
-    res.status(200).send("Deleted Course")
+    try {
+        const course = await Course.findByIdAndRemove({_id:req.params.id})
+        res.status(200).send("Deleted Course")
+    } catch (error) {
+        throw new Error('Course not found')   
+        
+    }
 }
     
 
 const getUserCourses = async (req, res) => {
     try {
         const user = await User.findOne({_id:req.params.id})
-        res.status(200).json(user.courses_enrolled)
+        const courseIds = user.courses_enrolled.map(course=>course.course)
+        // const enrolldate = user.courses_enrolled.map(course=>course.enrollDate)
+        const courses = await Course.find({_id:courseIds})
+        res.status(200).json({'courses':courses})
     } catch (error) {
         throw new Error('cannot get user')
     }
